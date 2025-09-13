@@ -1,0 +1,28 @@
+$TTL 1W
+@       IN      SOA     ns1.ocp.lan. admin.ocp.lan. (
+                        2023011301      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      ns1.ocp.lan.
+
+; Services VM
+1       IN      PTR     ocp-svc.ocp.lan.
+1       IN      PTR     api.ocp.lan.
+1       IN      PTR     api-int.ocp.lan.
+
+; OpenShift Cluster
+200     IN      PTR     ocp-bootstrap.ocp.lan.
+201     IN      PTR     ocp-cp-1.ocp.lan.
+202     IN      PTR     ocp-cp-2.ocp.lan.
+203     IN      PTR     ocp-cp-3.ocp.lan.
+204     IN      PTR     ocp-w-1.ocp.lan.
+205     IN      PTR     ocp-w-2.ocp.lan.
+206     IN      PTR     ocp-w-3.ocp.lan.
+
+; ETCD Cluster
+201     IN      PTR     etcd-0.ocp.lan.
+202     IN      PTR     etcd-1.ocp.lan.
+203     IN      PTR     etcd-2.ocp.lan.
+

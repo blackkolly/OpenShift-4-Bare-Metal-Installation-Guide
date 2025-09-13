@@ -1,0 +1,41 @@
+$TTL 1W
+@       IN      SOA     ns1.ocp.lan. admin.ocp.lan. (
+                        2023011301      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      ns1.ocp.lan.
+        IN      MX 10   smtp.ocp.lan.
+        IN      A       192.168.22.1
+
+ns1     IN      A       192.168.22.1
+smtp    IN      A       192.168.22.1
+
+; Services VM
+ocp-svc         IN      A       192.168.22.1
+
+; OpenShift Cluster
+ocp-bootstrap   IN      A       192.168.22.200
+ocp-cp-1        IN      A       192.168.22.201
+ocp-cp-2        IN      A       192.168.22.202
+ocp-cp-3        IN      A       192.168.22.203
+ocp-w-1         IN      A       192.168.22.204
+ocp-w-2         IN      A       192.168.22.205
+ocp-w-3         IN      A       192.168.22.206
+
+; OpenShift Internal - Load balancer targets
+api             IN      A       192.168.22.1
+api-int         IN      A       192.168.22.1
+*.apps          IN      A       192.168.22.1
+
+; ETCD Cluster
+etcd-0          IN      A       192.168.22.201
+etcd-1          IN      A       192.168.22.202
+etcd-2          IN      A       192.168.22.203
+
+; ETCD SRV records
+_etcd-server-ssl._tcp.ocp.lan.    86400   IN    SRV     0   10   2380   etcd-0.ocp.lan.
+_etcd-server-ssl._tcp.ocp.lan.    86400   IN    SRV     0   10   2380   etcd-1.ocp.lan.
+_etcd-server-ssl._tcp.ocp.lan.    86400   IN    SRV     0   10   2380   etcd-2.ocp.lan.
+
