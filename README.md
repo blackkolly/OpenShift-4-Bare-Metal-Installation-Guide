@@ -1,4 +1,3 @@
-# OpenShift-4-Bare-Metal-Installation-Guide
 # OpenShift 4 Bare Metal Installation Guide
 
 This repository provides a complete implementation guide for installing Red Hat OpenShift 4 on bare metal using virtual machines with User Provisioned Infrastructure (UPI). The configuration includes 3 master nodes and 3 worker nodes.
