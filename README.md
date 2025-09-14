@@ -528,13 +528,5 @@ Once the bootstrap process is complete and the control plane is operational, the
    - Open a web browser and navigate to `https://console-openshift-console.apps.lab.ocp.lan`
    - Log in with the admin user created earlier
 
-## Troubleshooting
 
-For common issues and solutions, see the [Troubleshooting Guide](docs/troubleshooting.md).
-
-## Additional Resources
-
-- [Official OpenShift Documentation](https://docs.openshift.com/container-platform/4.14/installing/installing_bare_metal/installing-bare-metal.html)
-- [OpenShift on Bare Metal UPI Blog](https://www.openshift.com/blog/openshift-4-bare-metal-install-quickstart)
-- [Red Hat CoreOS Documentation](https://docs.openshift.com/container-platform/4.14/architecture/architecture-rhcos.html)
 
