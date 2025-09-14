@@ -1,0 +1,28 @@
+# This is the installation configuration file for OpenShift 
+
+apiVersion: v1
+baseDomain: ocp.lan
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 3
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: lab
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+fips: false
+# Replace with your actual pull secret from Red Hat
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"YOUR_PULL_SECRET_HERE","email":"your@email.com"}}}'
+# Replace with your actual SSH public key
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... your ssh public key here ...'
