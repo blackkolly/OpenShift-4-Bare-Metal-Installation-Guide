@@ -1,0 +1,23 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: htpasswd_provider
+    mappingMethod: claim
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: htpasswd-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: htpasswd-secret
+  namespace: openshift-config
+type: Opaque
+data:
+  # This is for user 'admin' with password 'password'
+  # Replace with your own htpasswd generated string in base64
+  htpasswd: YWRtaW46JDJ5JDA1JEdQcC5lVVYzNTBTWVZvN3RoVWh3ZXVxU0JxajZHLzdYRUNPQzVMTERiNEhZM3lOZlJHYW1P
