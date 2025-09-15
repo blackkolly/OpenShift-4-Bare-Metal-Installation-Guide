@@ -1,6 +1,6 @@
-# OpenShift 4 Installation on txse.systems Data Center VMs
+# OpenShift 4 Installation on VMs
 
-This repository provides a comprehensive guide for deploying Red Hat OpenShift 4 on existing VMs in the txse.systems data center environment. This implementation follows the User Provisioned Infrastructure (UPI) method with 3 control plane nodes and 3 worker nodes.
+This repository provides a comprehensive guide for deploying Red Hat OpenShift 4 on existing VMs in data center environment. This implementation follows the User Provisioned Infrastructure (UPI) method with 3 control plane nodes and 3 worker nodes.
 
 ## Table of Contents
 
@@ -14,8 +14,7 @@ This repository provides a comprehensive guide for deploying Red Hat OpenShift 4
   - [4. Deploy OpenShift Nodes](#4-deploy-openshift-nodes)
   - [5. Monitor Installation](#5-monitor-installation)
   - [6. Post-Installation Tasks](#6-post-installation-tasks)
-- [Troubleshooting](#troubleshooting)
-- [References](#references)
+  
 
 ## VM Requirements
 
