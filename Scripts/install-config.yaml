@@ -1,0 +1,24 @@
+apiVersion: v1
+baseDomain: txse.systems
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 3
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: ocp
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+fips: false
+pullSecret: '{"auths":{"registry.redhat.io":{"auth":"YOUR_PULL_SECRET_HERE","email":"your@email.com"}}}'
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... your ssh public key here ...'
